@@ -1,0 +1,116 @@
+section {
+    background: #F4F4F4;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1044px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel {
+    display: block;
+    text-align: left;
+    margin-bottom: 22px;
+    flex: 3;
+}
+
+.carousel > input {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.carousel > input:nth-of-type(3):checked ~ .carousel__slides .carousel__slide:first-of-type {
+    margin-left: -200%;
+}
+
+.carousel > input:nth-of-type(2):checked ~ .carousel__slides .carousel__slide:first-of-type {
+    margin-left: -100%;
+}
+
+.carousel > input:nth-of-type(1):checked ~ .carousel__slides .carousel__slide:first-of-type {
+    margin-left: 0%;
+}
+
+.carousel > input:nth-of-type(1):checked ~ .carousel__thumbnails li:nth-of-type(1),
+.carousel > input:nth-of-type(2):checked ~ .carousel__thumbnails li:nth-of-type(2),
+.carousel > input:nth-of-type(3):checked ~ .carousel__thumbnails li:nth-of-type(3) {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+}
+
+.carousel__slides {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel__slide {
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel__slide figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.carousel__slide figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel__thumbnails {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-left: 20px; */
+}
+
+.carousel__thumbnails li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0);
+}
+
+.carousel__thumbnails label {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0);
+}
